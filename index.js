@@ -61,21 +61,21 @@ function openURL(url) {
     super3.classList.add('hidden')
   });
   
-  calculator.addEventListener('mouseover', function() {
-    calc.classList.remove('hidden')
-  });
+  // calculator.addEventListener('mouseover', function() {
+  //   calc.classList.remove('hidden')
+  // });
   
-  calculator.addEventListener('mouseout', function() {
-    calc.classList.add('hidden')
-  });
+  // calculator.addEventListener('mouseout', function() {
+  //   calc.classList.add('hidden')
+  // });
   
-  phone.addEventListener('mouseover', function() {
-    tipCalc.classList.remove('hidden')
-  });
+  // phone.addEventListener('mouseover', function() {
+  //   tipCalc.classList.remove('hidden')
+  // });
   
-  phone.addEventListener('mouseout', function() {
-    tipCalc.classList.add('hidden')
-  });
+  // phone.addEventListener('mouseout', function() {
+  //   tipCalc.classList.add('hidden')
+  // });
   
   
   // CALENDAR DATE
@@ -121,4 +121,27 @@ function openURL(url) {
   setInterval(setDate, 1000);
   
 
+
+// Hamburger menu toggle 
+
+(function () {
+  
+  var hamburger = {
+    hamToggle: document.querySelector('.hamburger'),
+    nav: document.querySelector('.nav2'),
+    
+    doToggle: function(e) {
+      e.preventDefault();
+      this.hamToggle.classList.toggle('expanded');
+      this.nav.classList.toggle('expanded');
+    }
+  };
+  
+  hamburger.hamToggle.addEventListener('click', function(e) {
+    hamburger.doToggle(e);
+  })
+  hamburger.nav.addEventListener('click', function(e) {
+    hamburger.doToggle(e);
+  })
+}());
 

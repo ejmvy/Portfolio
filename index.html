@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>EJ McVey</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou|Indie+Flower|Comfortaa|Unica+One" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133606115-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-133606115-1');
+    </script>
 </head>
   <body>
 
@@ -22,13 +32,27 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </nav>
+
+            <div class="hamburger hidden">
+                <div class="hamburger-bar"></div>
+            </div>
+
+            <div class="nav2">
+                <li><a href="#about">About</a></li><div class='navLine'></div>
+                <li><a href="#projects">Projects</a></li><div class='navLine'></div>
+                <li><a href="#skills">Skills</a></li><div class='navLine'></div>
+                <li><a href="#contact">Contact</a></li><div class='navLine'></div>
+            </div>
         </header>
     
         <div class='display'>
             <div class="mainDisp">
-                    <div class="lamp"></div>
+                    <div class="clickMe">Hover and Click Me !</div>
+                    <div class="string">
+                        <div class="lamp"></div>
+                    </div>
                     <div class="innerLight hidden"></div>
-                    <div class="string"></div>
+                    
                     <div class="super1 hidden"></div>
                     <div class="super2 hidden"></div>
                     <div class="super3 hidden"></div>
@@ -41,7 +65,7 @@
                         <div class="inner two"></div>
                     </div>
                     <div class="ledge"></div>
-                    <div class="mainClock">
+                    <div class="mainClock" onclick="openURL('https://s.codepen.io/Eejay/full/jxOjGZ')">
                         <div class="hour"></div>
                         <div class="min"></div>
                         <div class="sec"></div>
@@ -55,7 +79,7 @@
                         <div class="leaf2"></div>
                         <div class="leaf3"></div>
                     </a>
-                    <div class="picture">
+                    <div class="picture" onclick="openURL('https://floating-fortress-79148.herokuapp.com/')" target="_blank">
                         <div class="sea"></div>
                         <div class="mountain"></div>
                         <div class="tori"></div>
@@ -82,12 +106,12 @@
                         <div class="book three" onclick="openURL('https://codepen.io/Eejay/full/vjwyYd/')">
                             <div class="outer3"></div>
                         </div>
-                        <div class="paper">
+                        <a class="paper" href="http://www.ejmcvey.com/myresume.pdf" target="_blank">
                             <div class="bow">
                                 <div class="lines"></div>
                             </div>
-                        </div>
-                        <div class="clock" onclick="openURL('https://s.codepen.io/Eejay/full/jxOjGZ')">
+                        </a>
+                        <div class="clock" onclick="openURL('https://codepen.io/Eejay/full/BGryxO')">
                             <div class="face">
                                 <div class="hand"></div>
                                 <div class="hand two"></div>
@@ -127,7 +151,7 @@
                     <div class="tipCalc hidden"></div>
                     <div class="calc hidden"></div>
                     <div class="table">
-                        <div class="phone" onclick="openURL('https://codepen.io/Eejay/full/yRWKxL/')"></div>
+                        <div class="phone" onclick="openURL('https://codepen.io/Eejay/full/oEmoME')"></div>
                         <div class="calculator" onclick="openURL('https://codepen.io/Eejay/full/wYNoPQ/')">
                             <div class="top"></div>
                             <div class="calcBtns"></div>
@@ -136,8 +160,10 @@
                             <div class="calcBtns4"></div>
                         </div>
                         <div class="food" onclick="openURL('https://codepen.io/Eejay/full/pxXdjx/')">
-                            <div class="cookies"></div>
-                        </div>
+                            <div class="cookie"></div>
+                            <div class="cookie two"></div>
+                            <div class="cookie three"></div>
+                        </div> 
                         <div class="mug">
                             <div class="design">
                                 <div class="pacman"></div>
@@ -151,7 +177,7 @@
                         </div>
                         <div class="leftLeg"></div>
                         <div class="rightLeg"> </div>
-                        <div class="computer">
+                        <div class="computer" onclick="openURL('https://warbler-client-ej.herokuapp.com/')">
                             <div class="line1"></div>
                             <div class="line2"></div>
                             <div class="line3"></div>
@@ -163,9 +189,15 @@
                             <div class="btns"></div>
                             <div class="btns two"></div>
                             <div class="btns three"></div>
+                            <div class="btns four"></div>
+                            <div class="btns five"></div>
+                            <div class="btns six"></div>
                             <div class="btnsRight"></div>
                             <div class="btnsRight two"></div>
                             <div class="btnsRight three"></div>
+                            <div class="btnsRight four"></div>
+                            <div class="btnsRight five"></div>
+                            <div class="btnsRight six"></div>
                         </div>
                         <div class="me">
                             <div class="head">
@@ -263,10 +295,6 @@
                 </div>
                 <div class="iconRow">
                     <div class="icon">
-                        <i class="fas fa-language"></i>
-                        <p class="likesText">Learning new languages</p>
-                    </div>
-                    <div class="icon">
                         <i class="fab fa-css3-alt"></i>
                         <p class="likesText">CSS is my jam</p>
                     </div>
@@ -276,13 +304,17 @@
                     </div>
                     <div class="icon">
                         <i class="fas fa-beer"></i>
-                        <p class="likesText">I'm Irish, I loove Guinness</p>
+                        <p class="likesText">Guinnessss</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-language"></i>
+                        <p class="likesText">Learning new languages</p>
                     </div>
                 </div>
                 <div class="iconRow">
                     <div class="icon">
                         <i class="fas fa-user-graduate"></i>
-                        <p class="likesText">Learning new and interesting things</p>
+                        <p class="likesText">Learning new things</p>
                     </div>
                     <div class="icon">
                         <i class="fab fa-wolf-pack-battalion"></i>
@@ -385,7 +417,7 @@
                     </div>
                 </div>
                 <div class="skillLine">
-                    <div class="skillType">Node js</div>
+                    <div class="skillType">Node.js</div>
                     <div class="skillLine">
                         <div id="node"></div>
                     </div>
@@ -410,7 +442,9 @@
         <div class="resume">
             <div class="cvArea">
                 <h3>See my Resume</h3>
-                <button id="cvBtn">Click Here</button>
+                <button id="cvBtn">
+                    <a href="http://www.ejmcvey.com/myresume.pdf" target="_blank">Click Here</a>
+                </button>
             </div>
         </div>
     </div>
@@ -448,6 +482,7 @@
                     </div>
 
             </div>
+
             
         </div>
     </div>

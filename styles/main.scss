@@ -17,7 +17,8 @@ html, body {
 }
 
 body {
-    background: #fdf5e6;  
+    background: #fdf5e6;
+    font-family: 'Comfortaa', cursive;  
 }
 
 html {
@@ -39,6 +40,8 @@ h1 {
     font-size: 45px;
     color:$darkPurple;
     margin-bottom: -10px;
+    font-family: 'Unica One', cursive;
+
 }
 
 h4 {
@@ -49,6 +52,11 @@ h2 {
     font-size: 30px;
     color: $purple;
     margin-bottom: 15px;
+    font-family: 'Unica One', cursive;
+}
+
+.hidden {
+    display: none;
 }
 
 nav {
@@ -57,12 +65,12 @@ nav {
 
     li {
         list-style: none;
-        font-size: 18px;
+        font-size: 15px;
         text-transform: uppercase;
         color: $purple;
         margin: 0 20px;
         letter-spacing: 5px;
-       
+        // font-family: 'Unica One', cursive;
     }
 
     a {
@@ -80,7 +88,121 @@ nav {
     }
 }
 
+.nav2 {
+    background: rgba(184,80,178, 0.7);
+    padding: 80px 20px;
+    height: 100vh;
+    z-index: 2;
+    position: fixed;
+    display: flex; 
+    flex-direction: column;
+    right: -20rem;
+    // right: 0;
+    top: 0;
+    transition: right .5s ease;
 
+    &:hover {
+        background: rgba(184,80,178, 0.9);
+    }
+
+    .navLine {
+        width: 100%;
+        height: 1px;
+        background: #ccc;
+    }
+
+    li {
+        margin: 20px;
+        margin-top: 40px;
+        color: #ccc;
+        font-size: 25px;
+        list-style: none;
+        font-family: 'Unica One', cursive;
+
+
+        i:hover {
+          color: white;
+        }
+        
+        a{
+          color: #bdbdbd;
+          text-decoration: none;
+          
+          &:hover {
+            color: white;
+            // font-size: 15px;
+          }
+        }
+          
+    }
+}
+
+.nav2.expanded {
+    right: 0;
+    z-index: 2;
+  }
+
+
+  .hamburger {
+    position: fixed;
+    right: 3rem;
+    top: 2rem;
+    width: 2.5rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .hamburger .hamburger-bar, .hamburger .hamburger-bar::before, .hamburger .hamburger-bar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    background: $darkPurple;
+    width: 100%;
+    border-radius: 30px;
+    height: 0.2rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  ;}
+  
+  .hamburger .hamburger-bar {
+    margin-top: 0;
+    
+    &:before {
+      margin-top: -10px;
+    }
+    &:after {
+      margin-top:  10px;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  .hamburger.expanded .hamburger-bar {
+    background:transparent;
+    
+    &:before, &:after {
+      background: black;
+      margin-top: 0;
+    }
+    &:before {
+      transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    }
+    &:after {
+      transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    }
+  }
 
 .section {
     display: flex;
@@ -353,14 +475,17 @@ nav {
 .stats {
     width: 100%;
     display: flex;
-    margin: 40px 0;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    margin: 40px 10px;
+    align-items: center;
+    justify-content: center;
+
 
     .block {
         display: flex;
         flex-direction:column;
         align-items: center;
-        margin: 0 20px;
+        margin: 30px 50px;
 
         .num {
             color: $purple;
@@ -369,9 +494,13 @@ nav {
         .desc {
             color: $darkPurple;
             font-size: 18px;
+            text-align: center;
         }
     }
 }
+
+
+
 
 .likes {
     margin-top: 15px;
@@ -411,7 +540,6 @@ nav {
             }
 
             i {
-                
                 font-size: 60px;
                 color: $lavender;
                 
@@ -433,10 +561,6 @@ nav {
         }
     }
 }
-
-
-
- 
 
 @keyframes textSlideIn {
     0% {
@@ -461,15 +585,14 @@ nav {
         .mainProjs {
             cursor: pointer;
             position: relative;
-            
         }
 
         .proj {
-            // flex: 1;
+            flex: 1;
             width: 250px; 
             height: 180px;
             // background: $darkPurple;
-            margin: 15px 20px;
+            margin: 15px 10px;
             border-radius: 10px;
             &:hover {
                 box-shadow: 0 0 5px 2px rgba(0,0,0,0.3);
@@ -483,6 +606,7 @@ nav {
     position: absolute;
     width: 250px; 
     height: 180px;
+
     background:rgba(255,255,255, 0.4);
     font-size: 35px;
     color: black;
@@ -491,7 +615,7 @@ nav {
     opacity: 0;
     text-align: center;
     top: 14px;
-    left: 20px;
+    left: 10px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -565,7 +689,7 @@ nav {
                 }
                 #mongo {
                     @extend #html;
-                    width: 65%;
+                    width: 55%;
                 }
             }
         }
@@ -576,7 +700,10 @@ nav {
     width: 100%;
     margin-top: 80px;
     background: $darkPurple;
+    // background: $lightBeige;
     padding: 30px 0;
+
+    
 
     .cvArea {
         display:flex;
@@ -588,16 +715,23 @@ nav {
             color: white;
             font-size: 30px;
             letter-spacing: 1.6;
-    
+            font-family: 'Unica One', cursive;
         }
     
-        button {
-            padding: 8px 20px;
+
+        #cvBtn {
+            padding: 8px 20px; 
             font-size: 18px;
             border: 3px solid white;
             text-transform: uppercase;
-            background: none;
+            background:none;
             color: white;
+            text-decoration: none;
+
+            a{
+                color: white;
+                text-decoration: none;
+            }
             
 
             &:hover {
@@ -605,11 +739,22 @@ nav {
                 color: $darkPurple;
                 border: 3px solid $lavender;
             }
-    
         }
     }
 }
 
+@media (max-width: 700px) {
+    .contact .formArea {
+        flex-direction: column;
+
+        .profile2 {
+            order: 1;
+        }
+        form {
+            order: 2;
+        }
+    }
+}
 
 
 .contact {
@@ -761,6 +906,15 @@ footer {
     align-items: center;
     box-sizing: border-box;
     z-index: 0;
+    overflow: hidden;
+
+    &:hover {
+        .mainDisp .clickMe {
+            right: 20px;
+            // animation: slidein 3s ease-in;
+            // animation-fill-mode: forwards;
+        }
+    }
 
     * {
         position: absolute;
@@ -775,24 +929,67 @@ footer {
 
     .mainDisp {
         position: absolute;
-        width: 1000px;
+        width: 90%;
+        // width: 80%;
         height: 550px;
         // border: 1px solid black;
         z-index: -10;
         box-sizing: inherit;
+
+        .clickMe {
+            position: absolute;
+            font-size: 35px;
+            font-family: 'Indie Flower', cursive;
+            right: -500px;
+            top: 20px;
+            // display: none;
+            padding-right: 30px;
+            animation: textMove 8s linear infinite;
+            animation-delay: 2s;
+            transition: right 1s ease;
+        }
+
+        @keyframes textMove {
+            20% {
+                transform: translateX(-10px) translateY(-20px);
+            }
+            40% {
+                transform: translateX(-15px) translateY(-25px);
+            }
+            60% {
+                transform: translateX(-10px) translateY(-20px);
+
+            }
+        }
     
 
-        .lamp {
+        .string {
             position: absolute;
-            width: 120px;
-            height: 80px;
-            background: #494949;
-            -webkit-clip-path: polygon(50% 0%, 0 48%, 100% 48%);
-        clip-path: polygon(50% 0%, 0 48%, 100% 48%);
-            left: 45%;
-            top: 10%;
-            z-index: 4;
+            height: 60px;
+            width: 5px;
+            background: #878787;
+            left: 50%;
+            top: -10px;
+                // z-index: -1;
+            
+            .lamp {
+                position: absolute;
+                width: 0; 
+                height: 0; 
+                border-left: 60px solid transparent;
+                border-right: 60px solid transparent;    
+                border-bottom: 40px solid #494949;
+                left: -59px;
+                top: 55px;
+                transform-origin: top center;
+                z-index: 4;
+    
+                &:hover {
+                    animation: sway 2s linear;
+                }
+            }
         }
+        
         
         .innerLight {
             position: absolute;
@@ -802,17 +999,10 @@ footer {
             -webkit-clip-path: polygon(50% 0%, 0 48%, 100% 48%);
             clip-path: polygon(50% 0%, 0 48%, 100% 48%);
             background: rgba(253,245,230, 0.4);
-            left: 1%;
-            top: 55px;
+            left: 0;
+            top: 60px;
         }
-        .string {
-            position: absolute;
-            height: 70px;
-            width: 5px;
-            background: #878787;
-            left: 50.8%;
-            z-index: -1;
-        }
+        
 
         .shelf {
             position: absolute;
@@ -884,10 +1074,6 @@ footer {
             background-size: cover;
         }
         
-        .hidden {
-            display: none;
-        }
-        
         .book {
             position: absolute;
             width: 55px;
@@ -896,24 +1082,28 @@ footer {
             left: 10px;
             background: #e6dbac;
             cursor: pointer;
+
+            &:hover {
+                animation: raise 1s linear;
+            }
         
             .outer {
                 position: absolute;
-            width: 60px;
-            height: 20px;
-            border-left: 6px solid red;
-            border-bottom: 4px solid red;
-            border-top: 4px solid red;
-            background: none;
-            // bottom: 17px;
-            z-index: 3;
-            // left: 8px;
+                width: 60px;
+                height: 20px;
+                border-left: 6px solid red;
+                border-bottom: 4px solid red;
+                border-top: 4px solid red;
+                background: none;
+                // bottom: 17px;
+                z-index: 3;
+                // left: 8px;
             }
             
             &.two {
-            bottom: 40.5px;
-            // left: 10px;
-            width: 50px;
+                bottom: 40.5px;
+                // left: 10px;
+                width: 50px;
             .outer2 {
                 position: absolute;
                 left: -5px;
@@ -926,7 +1116,7 @@ footer {
             }
             
             &.three {
-            bottom: 61px;
+                bottom: 61px;
             .outer3 {
                 position: absolute;
                 width: 60px;
@@ -947,16 +1137,20 @@ footer {
             left: 88px;
             transform: rotate(-40deg);
             box-shadow: 0 0 2px rgba(0,0,0,0.3);
+
+            &:hover {
+                animation: paperShake 2s linear;
+            }
             
             .bow{
-            position: absolute;
-            width: 140%;
-            height: 12%;
-            background: red;
-            top: 45%;
-            left: -5px;
-            border-radius: 2px;
-            z-index: 2;
+                position: absolute;
+                width: 140%;
+                height: 12%;
+                background: red;
+                top: 45%;
+                left: -5px;
+                border-radius: 2px;
+                z-index: 2;
             
             .lines {
                 position: absolute;
@@ -968,21 +1162,21 @@ footer {
                 z-index:4;
                 
                 &:before, &:after {
-                position: absolute;
-                content: '';
-                width: 2px;
-                height: 8px;
-                background: #8b0000;
+                    position: absolute;
+                    content: '';
+                    width: 2px;
+                    height: 8px;
+                    background: #8b0000;
                 }
                 &:before {
-                left: 10px;
-                top: 8px;
-                transform: rotate(30deg);
+                    left: 10px;
+                    top: 8px;
+                    transform: rotate(30deg);
                 }
                 &:after {
-                left: 18px;
-                top: 7px;
-                transform: rotate(-30deg)
+                    left: 18px;
+                    top: 7px;
+                    transform: rotate(-30deg)
                 }
             }
             
@@ -1014,6 +1208,10 @@ footer {
             right: 10px;
             border-radius: 50%;
             cursor: pointer;
+
+            &:hover {
+                animation: shake 1s linear;
+            }
             
             &:before, &:after {
             position: absolute;
@@ -1093,27 +1291,31 @@ footer {
             left: 20px;
             border-radius: 0 0 60px 60px;
             cursor: pointer;
+
+            &:hover {
+                animation: plantMove 4s linear;
+            }
             
         
             .base {
-            position: absolute;
-            width: 120px;
-            height: 10px;
-            // z-index: 2;
-            background: $brown;
-            top: -10px;
-            left: -10px;
+                position: absolute;
+                width: 120px;
+                height: 10px;
+                // z-index: 2;
+                background: $brown;
+                top: -10px;
+                left: -10px;
             }
             
             .pBtn {
-            position: absolute;
-            width: 50px;
-            height: 30px;
-            background: green;
-            border-radius: 40%;
-            top: -20px;
-            z-index: -1;
-            left: 5px;
+                position: absolute;
+                width: 50px;
+                height: 10px;
+                background: green;
+                border-radius: 40% 40% 0 0;
+                top: -20px;
+                z-index: -2;
+                left: 5px;
             
             &:before {
                 @extend .pBtn;
@@ -1124,25 +1326,25 @@ footer {
             }
             
             .stalk {
-            position: absolute;
-            width: 20px; 
-            height: 45px;
-            border-radius: 50%;
-            box-shadow: 10px 10px 0 0 $medBrown;
-            left: 43px;
-            top: -75px;
-            transform: scaleY(1) rotate(100deg);
-            
+                position: absolute;
+                width: 20px; 
+                height: 45px;
+                border-radius: 50%;
+                box-shadow: 10px 10px 0 0 $medBrown;
+                left: 43px;
+                top: -75px;
+                transform: scaleY(1) rotate(100deg);
+                
             &:before {
-            position: absolute;
-            content: '';
-            width: 30px; 
-            height: 85px;
-            border-radius: 50%;
-            box-shadow: 10px 10px 0 0 $medBrown;
-            right: -28px;
-            top: -65px;
-            transform: scaleY(-1) rotate(200deg);
+                position: absolute;
+                content: '';
+                width: 30px; 
+                height: 85px;
+                border-radius: 50%;
+                box-shadow: 10px 10px 0 0 $medBrown;
+                right: -28px;
+                top: -65px;
+                transform: scaleY(-1) rotate(200deg);
             }
             &:after {
                 position: absolute;
@@ -1157,15 +1359,15 @@ footer {
             }
         }
             .leaf {
-            position: absolute;
-            width: 60px;
-            height: 30px;
-            background: green;
-            top: -65px;
-            left: 90px;
-            border-radius: 50%;
-            border: 1px solid #013220;
-            
+                position: absolute;
+                width: 60px;
+                height: 30px;
+                background: green;
+                top: -65px;
+                left: 90px;
+                border-radius: 50%;
+                border: 1px solid #013220;
+                
             &:before, &:after {
                 position: absolute;
                 content: '';
@@ -1233,6 +1435,10 @@ footer {
             right: 5px;
             box-shadow: 0 0 2px rgba(0,0,0,0.5);
             cursor: pointer;
+
+            &:hover {
+                animation: booksMove 2s linear;
+            }
             
             &:before {
             @extend .bookFront;
@@ -1286,6 +1492,10 @@ footer {
             border-radius: 3px;
             box-shadow: 0 0 2px rgba(0,0,0,0.3);
             cursor: pointer;
+
+            &:hover {
+                animation: move 2s linear;
+            }
             
             &:before {
             position: absolute;
@@ -1397,6 +1607,9 @@ footer {
             box-shadow: 0 0 2px rgba(0,0,0,0.4);
             z-index: 4;
             cursor: pointer;
+            &:hover {
+                animation: sideMove 4s linear;
+            }
             
             .steam {
                 position: absolute;
@@ -1528,27 +1741,50 @@ footer {
             transform: rotateX(40deg);
             box-shadow: 0 0 2px rgba(0,0,0,0.6);
             cursor: pointer;
+
+            // &:hover {
+            //     .cookie {
+            //         animation: munch 3s linear;
+            //     // animation-delay: 1s;
+            //     }
+                
+            // }
             
-            .cookies {
+            .cookie {
                 position: absolute;
-            width: 20px;
-            height: 20px;
-            background: $brown;
-            border-radius: 40px;
-            border: 1px solid black;
-            &:before {
-                @extend .cookies;
-                position: absolute;
-                content: '';
-                left: 25px;
+                width: 20px;
+                height: 20px;
+                background: $brown;
+                border-radius: 40px;
+                border: 1px solid black;
+
+                &:hover {
+                    animation: cookieRaise 2s linear;
+                }
+
+                &.two {
+                    @extend .cookie;
+                    position: absolute;
+                    
+                    left: 25px;
+
+                    
+                }
+                &.three {
+                    @extend .cookie;
+                    position: absolute;
+                    // content: '';
+                    left: 15px;
+                    top: -5px;
+                }
             }
-            &:after {
-                @extend .cookies;
-                position: absolute;
-                content: '';
-                left: 15px;
-                top: -5px;
-            }
+        }
+
+        @keyframes munch {
+            100% {
+                // width: 0px;
+                // height: 0px;
+                display: none;
             }
         }
         
@@ -1635,6 +1871,11 @@ footer {
             right: 25px;
             transform: rotateX(50deg) rotateZ(-5deg);
             cursor: pointer;
+
+            &:hover {
+                animation: shake 1s linear;
+            }
+
             .top {
                 position: absolute;
             width: 80%;
@@ -1711,50 +1952,55 @@ footer {
             width: 60px;
             height: 70px;
             background: #f2f2f2;
-            top: 220px;
-            right: 230px;
+            top: 250px;
+            right: 250px;
             box-shadow: 0 0 2px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             justify-content:space-between;
             align-items: center;
             cursor: pointer;
+            transform-origin: top center;
+
+            &:hover {
+                animation: spin 2s linear;
+            }
             
             
             &:before {
                 position: absolute;
                 content: '';
-            width: 5px;
-            height: 5px;
-            background: black;
-            border-radius: 50%;
-            left: 50%;
-            top: 1px;
+                width: 5px;
+                height: 5px;
+                background: black;
+                border-radius: 50%;
+                left: 50%;
+                top: 1px;
         
             }
             &:after {
                 position: absolute;
                 content: '';
-            width: 2px;
-            height: 5px;
-            background: black;
-            left: 49%;
-            top: 2px;
-            transform: rotate(60deg);
+                width: 2px;
+                height: 5px;
+                background: black;
+                left: 49%;
+                top: 2px;
+                transform: rotate(60deg);
             }
             
             #day {
                 position: absolute;
-            text-align: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: #b80000;
-            margin-top: 8px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 15px;
+                color: #b80000;
+                margin-top: 10px;
                 
             }
             #month {
                 position: absolute;
-            top: 40%;
+                top: 40%;
             }
             p {
                 position: absolute;
@@ -1849,8 +2095,12 @@ footer {
             right: 10px;
             bottom: 50px;
             box-shadow: 0 0 2px rgba(0,0,0,0.6);
-            // z-index: 5;
+            z-index: -2;
             cursor:pointer;
+
+            &:hover {
+                animation: move 2s linear;
+            }
         
             
             .handle {
@@ -1953,8 +2203,10 @@ footer {
             width: 400px;
             height: 18px;
             background: #c3b091;
+            // background: $darkBeige;
             top: 420px;
             left: 30%;
+            z-index: 5;
             
             &:before {
             position: absolute;
@@ -1965,15 +2217,17 @@ footer {
             -webkit-clip-path: polygon(9% 58%, 94% 58%, 100% 100%, 0% 100%);
         clip-path: polygon(9% 58%, 94% 58%, 100% 100%, 0% 100%);
             top: -78px;
+
             }
             
             .leftLeg {
-            position: absolute;
-            width: 20px;
-            height: 100px;
-            left: 10px;
-            background: #a67b5b;
-            z-index: -1;
+                position: absolute;
+                width: 20px;
+                height: 80px;
+                left: 10px;
+                top: 18px;
+                background: #a67b5b;
+                z-index: -1;
             
             &:before {
                 position: absolute;
@@ -1982,16 +2236,18 @@ footer {
                 height: 75%;
                 background: #a67b5b;
                 left: 25px;
+                z-index: -1;
             }
             }
             
             .rightLeg {
-            position: absolute;
-            width: 20px;
-            height: 100px;
-            right: 10px;
-            background: #a67b5b;
-            z-index: -1;
+                position: absolute;
+                width: 20px;
+                height: 80px;
+                right: 10px;
+                top: 18px;
+                background: #a67b5b;
+                z-index: -1;
             
             &:before {
                 position: absolute;
@@ -2000,6 +2256,7 @@ footer {
                 height: 75%;
                 background: #a67b5b;
                 right: 25px;
+                z-index: 3;
             }
             }
         }
@@ -2010,28 +2267,35 @@ footer {
             height: 90px;
             background: #dbf3fa;
             // background: #a1caf1;
-            left: 22%;
+            left: 26%;
             top: 32%;
             border: 7px solid brown;
             border-radius: 4px;
             overflow:hidden;
+            cursor: pointer;
+
+            &:hover {
+                .redTori, .tori {
+                    animation: sideMove 5s linear;
+                }
+            }
             
             .sea {
                 position: absolute;
-            width: 100%;
-            height: 40%;
-            background: #89cff0;
-            bottom: 0;
-            z-index: 3;
+                width: 100%;
+                height: 40%;
+                background: #89cff0;
+                bottom: 0;
+                z-index: 3;
             }
             .mountain {
                 position: absolute;
-            width: 40%;
-            height: 50px;
-            border-radius: 50%;
-            background: #ccc;
-            top: 10%;
-            left: -10%;
+                width: 40%;
+                height: 50px;
+                border-radius: 50%;
+                background: #ccc;
+                top: 10%;
+                left: -10%;
             &:before {
                 position: absolute;
                 content: '';
@@ -2046,24 +2310,24 @@ footer {
             }
             .tori {
                 position: absolute;
-            width: 80px;
-            height: 30px;
-            background: black;
-            right: 10%;
-            top: -5px;
-            z-index: 5;
-            -webkit-clip-path: polygon(0 69%, 100% 69%, 89% 85%, 7% 85%);
-        clip-path: polygon(0 69%, 100% 69%, 89% 85%, 7% 85%);
+                width: 80px;
+                height: 30px;
+                background: black;
+                right: 10%;
+                top: -5px;
+                z-index: 5;
+                -webkit-clip-path: polygon(0 69%, 100% 69%, 89% 85%, 7% 85%);
+            clip-path: polygon(0 69%, 100% 69%, 89% 85%, 7% 85%);
             }
             
             .redTori {
                 position: absolute;
-            width: 60px;
-            height: 8px;
-            background: red;
-            top: 17px;
-            right: 24px;
-            z-index: 3;
+                width: 60px;
+                height: 8px;
+                background: red;
+                top: 17px;
+                right: 24px;
+                z-index: 3;
             
             &:before, &:after {
                 position: absolute;
@@ -2156,37 +2420,44 @@ footer {
             height: 90px;
             background: $darkBeige;
             border-radius: 50%;
-            top: 17%;
-            right: 22%;
+            top: 20%;
+            right: 220px;
             cursor: pointer;
+
+            &:hover {
+                .hour, .min, .sec {
+                    animation: clockSpin .5s infinite linear;
+                }
+            }
+
             &:before {
                 position: absolute;
-                content: '';
-            // position: relative;
-            width: 90%;
-            height: 90%;
-            background: #f2f2f2;
-            border-radius: 50%;
-            top: 5%;
-            left: 5%;
-            // z-index: 2;
+                    content: '';
+                // position: relative;
+                width: 90%;
+                height: 90%;
+                background: #f2f2f2;
+                border-radius: 50%;
+                top: 5%;
+                left: 5%;
+                // z-index: 2;
             }
             
             .hour, .min, .sec {
-            position: absolute;
-            width: 40%;
-            background: black;
-            height: 4px;
-            top: 50%;
-            left: 10%;
-            transform-origin: 100%;
-            transform: rotate(90deg);
+                position: absolute;
+                width: 40%;
+                background: black;
+                height: 4px;
+                top: 50%;
+                left: 10%;
+                transform-origin: 100%;
+                transform: rotate(90deg);
         
             }
             .hour {
-            width: 26%;
-            border-radius: 4px;
-            left: 23%;
+                width: 26%;
+                border-radius: 4px;
+                left: 23%;
             }
             
             .min {
@@ -2367,41 +2638,46 @@ footer {
             bottom: 55px;
             left: 125px;
             border-radius: 6px;
+            cursor: pointer;
+
+            &:hover {
+                animation: plantMove 3s linear;
+            }
             
             &:before {
-            position: absolute;
-            content: '';
-            width: 92%;
-            height: 92%;
-            background: #3b3b3b;
-            border-radius: 6px;
-            left: 4.5%;
-            top: 5%;
-            z-index: 1;
+                position: absolute;
+                content: '';
+                width: 92%;
+                height: 92%;
+                background: #3b3b3b;
+                border-radius: 6px;
+                left: 4.5%;
+                top: 5%;
+                z-index: 1;
             }
             
             &:after {
                 position: absolute;
                 content: '';
-            width: 20px;
-            height: 30px;
-            background: #808080;
-            bottom: -20px;
-            left: 60px;
-            // z-index: -1;
+                width: 20px;
+                height: 30px;
+                background: #808080;
+                bottom: -20px;
+                left: 60px;
+                // z-index: -1;
             }
             
             .line1 {
                 position: absolute;
-            height: 4px;
-            width: 0;
-            background: pink;
-            top: 15px;
-            left: 15px;
-            z-index: 1;
-            animation: grow-med 3s;
-            animation-delay: 4s;
-            animation-fill-mode: forwards;
+                height: 4px;
+                width: 0;
+                background: pink;
+                top: 15px;
+                left: 15px;
+                z-index: 1;
+                animation: grow-med 3s;
+                animation-delay: 4s;
+                animation-fill-mode: forwards;
             
             
             &:before {
@@ -2592,15 +2868,15 @@ footer {
         clip-path: polygon(9% 73%, 92% 73%, 100% 100%, 0% 100%);
             
             .btns {
-            position: absolute;
-            left: 10px;
-            top: 50px;
-            width: 8px;
-            height: 5px;
-            background: #a9a9a9;
-            border-bottom: 1px solid #3b3b3b;
-            border-right: 1px solid #3b3b3b;
-            transform: skewX(-20deg);
+                position: absolute;
+                left: 10px;
+                top: 50px;
+                width: 8px;
+                height: 5px;
+                background: #a9a9a9;
+                border-bottom: 1px solid #3b3b3b;
+                border-right: 1px solid #3b3b3b;
+                transform: skewX(-20deg);
             
             &:before, &:after {
                 position: absolute;
@@ -2633,19 +2909,41 @@ footer {
                 position: absolute;
                 left: 30px;
             }
+            &.four {
+                @extend .btns;
+                position: absolute;
+                left: 40px;
+            }
+            &.five {
+                @extend .btns;
+                position: absolute;
+                left: 50px;
+            }
+            &.six {
+                @extend .btns;
+                width: 7px;
+                position: absolute;
+                left: 60px;
+                &:before {
+                    left: 1px;
+                }
+                &:after {
+                    left: 2px;
+                }
+            }
             }
             
             .btnsRight {
-            position: absolute;
-            right: 10px;
-            top: 50px;
-            width: 8px;
-            height: 5px;
-            background: #a9a9a9;
-            border-bottom: 1px solid #3b3b3b;
-            border-right: 1px solid #3b3b3b;
-            transform: skewX(20deg);
-            
+                position: absolute;
+                right: 10px;
+                top: 50px;
+                width: 8px;
+                height: 5px;
+                background: #a9a9a9;
+                border-bottom: 1px solid #3b3b3b;
+                border-right: 1px solid #3b3b3b;
+                transform: skewX(20deg);
+                
             &:before, &:after {
                 position: absolute;
                 content: '';
@@ -2674,15 +2972,45 @@ footer {
                 position: absolute;
                 right: 30px;
             }
+            &.four {
+                @extend .btnsRight;
+                position: absolute;
+                right: 40px;
+            }
+            &.five {
+                @extend .btnsRight;
+                position: absolute;
+                right: 50px;
+            }
+            &.six {
+                @extend .btnsRight;
+                width: 6px;
+                position: absolute;
+                right: 60px;
+                &:before {
+                    right: 1px;
+                    
+                }
+                &:after {
+                   right: 2px;
+                    
+                }
+            }
             }
         }
         
         .me {
             position: absolute;
             z-index: 5;
-            right: -500px;
+            // right: -500px;
+            // right: 500px;
             animation: slidein 3s ease-in;
+            animation-fill-mode: forwards;
             left: 0px;
+            // &:hover {
+            //     animation: meMove 5s linear;
+            //     animation-fill-mode: forwards;
+            // }
         }
         
         @keyframes slidein {
@@ -2847,9 +3175,291 @@ footer {
                 transform: rotate(55deg);
             }
             }
+        
+            
+        }
+    }
+    @keyframes move {
+        20% {
+            -webkit-transform: translateY(-20px) rotate(10deg);
+                    transform: translateY(-20px) rotate(10deg);
+        }
+        40% {
+            -webkit-transform: translateY(-25px) rotate(0deg);
+                    transform: translateY(-25px) rotate(0deg);
+        }
+        60% {
+            -webkit-transform: translateY(-20px) rotate(-5deg);
+                    transform: translateY(-20px) rotate(-5deg);
+        }
+    }
+    @keyframes plantMove {
+        20% {
+            transform: rotate(5deg);
+        }
+        40% {
+            transform: rotate(-5deg);
+        }
+        60% {
+            transform: rotate(5deg);
+        }
+        80% {
+            transform: rotate(-5deg);
+        }
+    }  
+
+    @keyframes sideMove {
+        20% {
+            transform: translateX(5px)
+        }
+        40% {
+            transform: translateX(-5px)
+        }
+        60% {
+            transform: translateX(5px)
+        }
+        // 20% {
+        //     transform: translateX(50px)
+        // }
+    }
+    @keyframes booksMove {
+        20% {
+            -webkit-transform: translateY(-5px) rotate(10deg);
+                    transform: translateY(-5px) rotate(10deg);
+        }
+        40% {
+            -webkit-transform: translateY(-10px) rotate(0deg);
+                    transform: translateY(-10px) rotate(0deg);
+        }
+        60% {
+            -webkit-transform: translateY(-5px) rotate(-5deg);
+                    transform: translateY(-5px) rotate(-5deg);
+        }
+    }
+
+    @keyframes paperShake {
+        20% {
+            transform: translateY(-10px) translateX(5px);
+        }
+        40% {
+            transform: translateY(-10px) translateX(5px) rotate(10deg);
+        }
+        60% {
+            transform: translateY(-10px) translateX(5px) rotate(-10deg);
+        }
+    }
+
+    @keyframes raise {
+        100% {
+            -webkit-transform: translateY(-5px);
+                    transform: translateY(-5px);
+        }
+    }
+    @keyframes cookieRaise {
+        100% {
+            -webkit-transform: translateY(-15px);
+                    transform: translateY(-15px);
+        }
+    }
+
+    @keyframes sway {
+        20% {
+            -webkit-transform: rotate(10deg);
+                    transform: rotate(10deg);
+        }
+        40% {
+            -webkit-transform:  rotate(0deg);
+                    transform: rotate(0deg);
+        }
+        60% {
+            -webkit-transform: rotate(-5deg);
+                    transform: rotate(-5deg);
+
+        }
+    }
+
+    @keyframes spin {
+        100% {
+            -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+        }
+    }
+
+    @keyframes clockSpin {
+        100% {
+            transform: rotate(620deg);
+        }
     }
 }
 
 
+@media(max-width: 1050px) {
+    // .display .mainDisp {
+    //     width: 800px;
+    // }
 
+    header nav {
+        display: none;
+      }
+      
+      .hamburger {
+        display: inline;
+      }
+
+      .display .mainDisp .clickMe {
+          font-size: 22px;
+          right: 0;
+      }
+    // .display:hover .mainDisp .clickMe {
+    //     display: none;
+    // }
+
+    .likes .icons {
+        width: 80%;
+    }
+
+    #projects .mainProjects .mainProjs {
+        .proj, .projCaption {
+            width: 300px; 
+            height: 230px;
+            
+        }
+         .proj {
+            margin: 15px 20px;
+         }
+         .projCaption {
+             left: 20px;
+         }
+    }
+}
+
+
+@media (max-width: 900px){
+    // .musicBox, .plant, .switch, .note {
+    //     display: none;
+    // }
+    .calander, .picture, .mainClock, .note, .musicBox {
+        display: none;
+    }
+
+    .display .mainDisp .lamp {
+        left: 42.5%;
+    }
+
+    .section {
+       padding: 0 60px; 
+    }
+
+    #projects .mainProjects .mainProjs {
+        .proj, .projCaption {
+            width: 370px; 
+            height: 290px;
+            
+        }
+    }
+
+    #contact .formArea {
+        form {
+            margin-right: 20px;
+        }
+        .profile2 {
+            margin-left: 20px;
+        }
+    }
+
+    .likes .icons {
+        width: 100%;
+
+        .icon i {
+            font-size: 50px;
+        }
+    }
+}
+
+@media(max-width: 800px) {
+    .display .mainDisp {
+        .plant {
+            display: none;
+        }
+        .table {
+            transform: translateX(-50px);
+        }
+        .calander {
+            top: 210px;
+        }
+    }
+  
+}
+
+@media(max-width: 700px) {
+    .display .mainDisp {
+        .lamp {
+            left: 40%;
+        }
+        .table {
+            // transform: translateX(-100px);
+            left: 25%;
+        }
+        
+    }
+    
+}
+
+
+@media (max-width: 600px) {
+    .shelf {
+        display: none;
+    }
+    .lamp {
+        left: 36%;
+    }
+
+    .display .mainDisp {
+        .mainClock {
+            display: inline;
+            right: 0;
+        }
+        .calander {
+            right: 30px;
+        }
+    }
+    
+
+    .likes .icons {
+        .icon {
+            margin: 10px 0;
+            .likesText {
+                font-size: 12px;
+                padding: 0;
+            }
+        }
+        
+    }
+}
+
+
+@media(max-width: 500px) {
+    .display .mainDisp {
+        .lamp {
+            left: 35%;
+        }
+
+        .table {
+            // transform: translateX(-125px);
+            left: 50px;
+        }
+    }
+    
+}
+
+@media(max-width:430px) {
+    .display .mainDisp {
+        .table {
+            left: 8%;
+        }
+        .clickMe {
+            width: 120px;
+            right: -15px;
+        }
+    }
 }
